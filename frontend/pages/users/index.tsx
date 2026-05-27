@@ -3,8 +3,6 @@ import React from 'react';
 export async function getServerSideProps() {
   const res = await fetch('http://localhost:8000/api/users');
   const users = await res.json();
-  console.log(users);
-
   return {
     props: {
       users: users.results || [],
